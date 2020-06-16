@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/play.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"> -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="music">
+        <audio src="" id="audio"></audio>
+    </div>
+ 
+    <!-- 大容器，相对定位 -->
+    <div class="container">
+        <div class="needle"></div>
+            <!-- 唱片 -->
+        <div class="song-info">
+            <div class="disc roll paused">
+                <div class="song-img">
+                    <img src="" alt="">
+                </div>
+            </div>
+            <!-- 歌词 -->
+            <div class="song-lyric">
+                <h2></h2>
+                <div class="lyricscroll">
+                    <p></p>
+
+                </div>
+            </div>
+            <!-- 进度条 -->
+            <div class="range-container">
+                <input id="range" class="custom-range" type="range" value="0">
+            </div>
+        </div>
+        
+        <!-- 毛玻璃背景 -->
+        <div class="bg">
+            <img src="" alt="">
+        </div>
+       
+    </div>
+    
+</body>
+<!-- 先应用库,在引用我们自己写的逻辑代码 -->
+<script src="../node_modules/axios/dist/axios.js"></script>
+<script src="../node_modules/lyric-parser/dist/lyric.js"></script>
+<script src="../js/getElement.js"></script>
+<script src="../js/play.js"></script>
+<script src="../js/changeHeight.js"></script>
+</html>

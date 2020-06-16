@@ -1,0 +1,287 @@
+html,body{
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.needle{
+    width: 84px;
+    height: 122px;
+    background: url("../img/needle.png");
+    background-size: cover;
+    position: absolute;
+    z-index: 1005;
+    left: 50%;
+}
+.song-info{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1000;
+}
+.disc{
+    width: 60%;
+    padding-top: 60%;
+    background:url("../img/disc.png");
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 50px;
+    background-size: cover;
+    position: relative;
+}
+.song-img{
+    width: 65%;
+    height: 65%;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+.song-img>img{
+    width: 100%;
+}
+.bg{
+    height: 100%;
+    width: 100%;
+    z-index: 995;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    filter: blur(15px) brightness(0.55);
+}
+.bg>img{
+    position: relative;
+    height: 150%;
+    top: -20px;
+}
+.song-lyric{
+    margin-top: 25px;
+    height: 200px;
+    /* overflow: scroll; */
+    /* background-attachment: fixed; */
+    /* color: white; */
+    /*淡入当前文本颜色的背景渐变*/
+    /* background-image: linear-gradient(transparent 10%, currentColor 30%, currentColor 70%, transparent 90%); */
+    /*剪切到文本,把渐变从背景填充到文字当中*/
+    /* -webkit-background-clip: text; */
+    /* background-clip: text; */
+    /*将背景固定在viewport上 */
+    /* background-attachment: fixed; */
+    /*将文本设置为透明，以便通过显示淡入淡出的背景*/
+}
+.lyricscroll{
+    margin-top: 25px;
+    height: 200px;
+    overflow: scroll;
+}
+.lyricscroll::-webkit-scrollbar{
+    display: none;
+}
+
+.song-lyric>h2{
+    text-align: center;
+    color: white;
+    font-weight: normal;
+    font-size: 17px;
+    padding: 15px;
+}
+.lyricscroll>p{
+    margin: 0px 50px 0px 50px;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 2px;
+       
+    /* color: transparent; */
+}
+@keyframes an{
+    0%{ transform: rotate( 0deg ); }
+    100%{ transform: rotate(360deg); }
+}
+.roll{
+    /* animation：动画名称 时间长度 缓动类型 是否重复 */
+    animation: an   20s linear infinite;
+}
+
+.playing{
+    animation-play-state: running;
+}
+.paused{
+    animation-play-state: paused;
+}
+
+.range-container{
+    width: 70%;
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.custom-range {
+    width: 100%;
+    height: 1.4rem;
+    padding: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .custom-range:focus {
+    outline: none;
+  }
+  
+  .custom-range:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .custom-range:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .custom-range:focus::-ms-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .custom-range::-moz-focus-outer {
+    border: 0;
+  }
+  
+  .custom-range::-webkit-slider-thumb {
+    width: 1.5rem;
+    height: 0.7rem;
+    margin-top: -0.09rem;
+    background-color: #d43c33;
+    border: 0;
+    border-radius: 0.5rem;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .custom-range::-webkit-slider-thumb {
+      -webkit-transition: none;
+      transition: none;
+    }
+  }
+  
+  .custom-range::-webkit-slider-thumb:active {
+    background-color: #b3d7ff;
+  }
+  
+  .custom-range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.5rem;
+    color: transparent;
+    cursor: pointer;
+    background-color: #dee2e6;
+    border-color: transparent;
+    border-radius: 1rem;
+  }
+  
+  .custom-range::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    background-color: #007bff;
+    border: 0;
+    border-radius: 1rem;
+    -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .custom-range::-moz-range-thumb {
+      -moz-transition: none;
+      transition: none;
+    }
+  }
+  
+  .custom-range::-moz-range-thumb:active {
+    background-color: #b3d7ff;
+  }
+  
+  .custom-range::-moz-range-track {
+    width: 100%;
+    height: 0.5rem;
+    color: transparent;
+    cursor: pointer;
+    background-color: #dee2e6;
+    border-color: transparent;
+    border-radius: 1rem;
+  }
+  
+  .custom-range::-ms-thumb {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0;
+    margin-right: 0.2rem;
+    margin-left: 0.2rem;
+    background-color: #007bff;
+    border: 0;
+    border-radius: 1rem;
+    -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    appearance: none;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .custom-range::-ms-thumb {
+      -ms-transition: none;
+      transition: none;
+    }
+  }
+  
+  .custom-range::-ms-thumb:active {
+    background-color: #b3d7ff;
+  }
+  
+  .custom-range::-ms-track {
+    width: 100%;
+    height: 0.5rem;
+    color: transparent;
+    cursor: pointer;
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 0.5rem;
+  }
+  
+  .custom-range::-ms-fill-lower {
+    background-color: #dee2e6;
+    border-radius: 1rem;
+  }
+  
+  .custom-range::-ms-fill-upper {
+    margin-right: 15px;
+    background-color: #dee2e6;
+    border-radius: 1rem;
+  }
+  
+  .custom-range:disabled::-webkit-slider-thumb {
+    background-color: #adb5bd;
+  }
+  
+  .custom-range:disabled::-webkit-slider-runnable-track {
+    cursor: default;
+  }
+  
+  .custom-range:disabled::-moz-range-thumb {
+    background-color: #adb5bd;
+  }
+  
+  .custom-range:disabled::-moz-range-track {
+    cursor: default;
+  }
+  
+  .custom-range:disabled::-ms-thumb {
+    background-color: #adb5bd;
+  }

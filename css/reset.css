@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    resize: none;
+    -webkit-tap-highlight-color: transparent;
+    list-style: none;
+    /* box-sizing: border-box;//加入padding盒子不会变大 */
+    /* box-sizing: content-box;//加入padding盒子会变大（默认的） */
+
+}
+a{
+    text-decoration: none;
+}
